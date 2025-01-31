@@ -14,7 +14,7 @@ export default function NewGoal({ handleAddGoal }: NewGoalProps) {
     const enteredGoal = goal.current!.value;
     const enteredDescription = description.current!.value;
 
-    event.currentTarget.reset;
+    event.currentTarget.reset();
     handleAddGoal(enteredGoal, enteredDescription);
     goal.current!.focus();
   }
