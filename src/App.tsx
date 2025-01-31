@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { useState } from "react";
 import CourseGoalsList from "./components/CourseGoalsList";
 import NewGoal from "./components/NewGoal";
+import InfoBox from "./components/InfoBox";
 
 export type CourseGoal = {
   title: string;
@@ -34,6 +35,9 @@ export default function App() {
         <h1>Your Course Goals</h1>
       </Header>
       <NewGoal handleAddGoal={handleAddGoal} />
+      {goals.length === 0 && (
+        <InfoBox mode="hint">No goals found. Maybe add one?</InfoBox>
+      )}
       <CourseGoalsList goals={goals} handleDeleteGoal={handleDeleteGoal} />
     </main>
   );
